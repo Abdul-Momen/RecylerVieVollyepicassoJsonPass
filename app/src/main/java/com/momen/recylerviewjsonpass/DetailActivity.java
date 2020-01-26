@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,11 +20,21 @@ import static com.momen.recylerviewjsonpass.MainActivity.EXTRA_PHONE;
 import static com.momen.recylerviewjsonpass.MainActivity.EXTRA_URL;
 
 public class DetailActivity extends AppCompatActivity {
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        button=findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(DetailActivity.this,TestActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //recived intent
         Intent intent = getIntent();

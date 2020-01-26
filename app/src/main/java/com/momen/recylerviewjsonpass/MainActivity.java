@@ -60,7 +60,7 @@ public class  MainActivity extends AppCompatActivity implements ExampleAdapter.O
         String url = "https://api.myjson.com/bins/v6wsw";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
+                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
@@ -71,7 +71,7 @@ public class  MainActivity extends AppCompatActivity implements ExampleAdapter.O
 
                                 String creatorName = hit.getString("name");
                                 String email=hit.getString("email");
-                                String phone=hit.getString("phone");
+                                String phone=hit.getString( "phone");
                                 String adress=hit.getString("adress");
                                 String companyName=hit.getString("company");
                                 String imageUrl = hit.getString("imageurl");
