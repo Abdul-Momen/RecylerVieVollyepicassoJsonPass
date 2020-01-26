@@ -57,9 +57,17 @@ public class  MainActivity extends AppCompatActivity implements ExampleAdapter.O
 
     //api hit
     private void parseJSON() {
+
+
+        // Get a RequestQueue
+        RequestQueue queue = MySingleton.getInstance(this.getApplicationContext()).
+                getRequestQueue();
+
+
+
         String url = "https://api.myjson.com/bins/v6wsw";
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                  new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -95,7 +103,15 @@ public class  MainActivity extends AppCompatActivity implements ExampleAdapter.O
             }
         });
 
-        mRequestQueue.add(request);
+
+
+
+       MySingleton.getInstance(this).addToRequestQueue(stringRequest);
+
+
+
+
+
     }
 
 
